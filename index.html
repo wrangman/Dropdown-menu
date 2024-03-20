@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>DropDown exempel</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,12 +15,23 @@
         <nav>
             <ul class="primary-navigation">
                 <li><a class="nav-link" href="index.html">Hem</a></li>
+                <!-- dropdown meny skapas med dropdown-klass -->
                 <li class="dropdown">
                     <a class="nav-link" href="#">Portfolio</a>
                     <ul>
+                        <li><a class="nav-link" href="portfolio.html">Visa Allt</a></li>
                         <li><a class="nav-link" href="project1.html">Projekt 1</a></li>
-                        <li><a class="nav-link" href="project2.html">Stort Projekt 2</a></li>
-                        <li><a class="nav-link" href="project3.html">Större Projekt 3</a></li>
+                        <li><a class="nav-link" href="project2.html">Större Projekt 2</a></li>
+                        <li><a class="nav-link" href="project3.html">Största Projekt 3</a></li>
+                        <!--submenu-->
+                        <!-- <li class="dropdown">
+                            <a class="nav-link" href="project1.html">Uppgifter</a>
+                            <ul>
+                                <li><a class="nav-link" href="project1.html">Uppgift 1</a></li>
+                                <li><a class="nav-link" href="project2.html">Uppgift 2</a></li>
+                                <li><a class="nav-link" href="project3.html">Uppgift 3</a></li>
+                            </ul>
+                        </li> -->
                     </ul>
                 </li>
                 <li><a class="nav-link" href="help.html">Hjälp</a></li>

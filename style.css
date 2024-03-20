@@ -18,6 +18,7 @@
     --clr-box-shadow: rgb(178, 178, 178);
      
     --menu-item-size: 1rem;        /* hur stora ska menyobjekten vara? */
+    --font-size: 1.125em;
     
     --ff-primary: 'Segoe UI', sans-serif;
 
@@ -35,7 +36,7 @@ body {
     margin: 0;
     padding: 0;
     
-    font-size: 1.125em;
+    font-size: var(--font-size);
     
     background-color: var(--clr-primary);
 
@@ -64,7 +65,9 @@ header {
 }
 
 main {
-    width: 90%;
+    margin-top: 3rem;
+
+    width: 70%;
     margin-inline: auto;
 }
 
@@ -119,7 +122,7 @@ p {
     white-space: nowrap;
 }
 
-/* öppna submeny */
+/* öppna dropdown meny */
 .dropdown:hover > ul {
     display: block;
 
@@ -130,9 +133,22 @@ p {
     z-index: 99;
 }
 
+/*undermenyer (sub dropdown) */
+.dropdown ul .dropdown > ul {
+    display: none;
+    white-space: nowrap;
+}
+
+.dropdown ul .dropdown:hover > ul {
+    display: block;
+    left: 100%;
+    top: 0;
+}
+
 li ul li {
     /* här beräknas storleken på menyobjekten */
     padding: calc(var(--menu-item-size)/2) 0;
+
     
     /* justera menyobjekten */
     text-align: left;
@@ -149,9 +165,19 @@ li ul li:hover {
     border-radius: var(--border-radius);    
 }
 
+li ul li:active {
+    background: var(--clr-copy);
+}
+
 li ul li:hover > a {
     color:var(--clr-accent);
 }
 
+/* pil bara för submenus */
+li .dropdown::after {
+    content: '>';
+    position: absolute;
+    right: 0;
+}
 
 
