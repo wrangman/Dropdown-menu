@@ -149,7 +149,6 @@ p {
 li ul li {
     padding: calc(var(--menu-item-size)/2) 0;
     
-    
     /* justera menyobjekten */
     text-align: left;
 }
@@ -161,13 +160,15 @@ li ul li a {
 }
 
 /* selection */
-li ul li:hover {
+li ul li:hover,
+li ul li:focus-within {
     background: var(--clr-hover);
     border-radius: var(--border-radius);    
 }
 
-li ul li:active {
+li ul li:active > a:hover {
     background: var(--clr-copy);
+    border-radius: var(--border-radius);    
 }
 
 li ul li:hover > a {
