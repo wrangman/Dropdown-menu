@@ -73,12 +73,6 @@ main {
     list-style: none;
 }
 
-ul {
-    list-style: none;
-    margin-inline: 0;
-    padding-left:0;
-}
-
 .logobrand {
     font-size: calc(var(--menu-item-size) * 1.3);
     font-weight: bold;
@@ -111,6 +105,17 @@ p {
 }
 
 /* dropdown styling */
+
+ul {
+    list-style: none;
+    margin-inline: 0;
+    padding-left:0;
+}
+
+ul li ul li {
+    margin-block: 0;
+    padding-block: 0;
+}
 
 /* se till att alla submenyer är stängda från början */
 .dropdown {
@@ -159,28 +164,32 @@ li ul li {
 
 /* storleken på länkarna i submenyn */
 li ul li a {
+    display: block;
     /* här beräknas storleken på menyobjekten */
     padding: calc(var(--menu-item-size) / 2) var(--menu-item-size); 
 }
 
 /* markering */
-li ul li:hover,
-li ul li:focus-within {
+li ul li a:hover,
+li ul li a:focus-within {
     background: var(--clr-hover);
-    border-radius: var(--border-radius);    
-}
-
-li ul li:hover > .nav-link,
-li ul li:focus > .nav-link {
     color:var(--clr-accent);
+    border-radius: var(--border-radius);
+
 }
 
+li ul li a:active {
+    background: var(--clr-copy);
+    
+}
 
 /* pil bara för submenus */
 li .dropdown::after {
     content: '>';
     position: absolute;
     right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
