@@ -1,0 +1,157 @@
+
+/* global styling */
+
+:root {
+
+    /*ändra färger och inställningar här för din meny */
+    --clr-copy: #3a3a3a;                  /* normal text på sidan */
+    
+    --clr-primary: hsl(0, 0%, 96%);       /* bakgrundsfärg och primära färgen */
+    --clr-secondary: rebeccapurple;       /* menyfärg */
+    --clr-accent: orchid;                 /* hightlight CTA-färg  */
+    
+    --clr-white: hsl(0, 0%, 99%);   
+    --clr-submenu-background: var(--clr-white);  /* submenyns bakgrund är samma som navbar - men man kan ändra här */
+    
+    --clr-hover: #e6e6e6;
+
+    --clr-box-shadow: rgb(178, 178, 178);
+     
+    --menu-item-size: 1rem;        /* hur stora ska menyobjekten vara? */
+    
+    --ff-primary: 'Segoe UI', sans-serif;
+
+    --border-radius: 0.250rem;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    
+    font-size: 1.125em;
+    
+    background-color: var(--clr-primary);
+
+    min-height: 100vh;
+
+    font-family: var(--ff-primary);
+}
+
+header {
+    position: sticky;
+    top:0;
+
+    display: flex;
+    gap: 2rem;
+    
+    /* justify-content: space-between; */
+    align-items: center;
+    
+    padding: var(--menu-item-size) calc(var(--menu-item-size) * 2);
+        
+    background: var(--clr-white);
+
+    box-shadow: 0 3px 6px var(--clr-box-shadow);
+
+    z-index: 1;
+}
+
+main {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.primary-navigation {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+    margin-inline: 0;
+    padding-left:0;
+}
+
+.logobrand {
+    font-weight: bold;
+}
+
+
+/* text styling */
+p {
+    color: var(--clr-copy);
+}
+
+
+/* link styling */
+.nav-link,
+.nav-link:visited {
+    font-size: 1.2rem;
+    color: var(--clr-secondary);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--clr-accent);
+}
+
+
+/* dropdown styling */
+
+/* se till att alla submenyer är stängda från början */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > ul {
+    position: absolute;
+    /* ska menyn dyka upp högerjusterad?*/
+    /* right: 0; */
+    display: none;
+    white-space: nowrap;
+}
+
+/* öppna submeny */
+.dropdown:hover > ul {
+    display: block;
+
+    background: var(--clr-submenu-background);
+    box-shadow: 0 3px 6px var(--clr-box-shadow);
+
+    border-radius: var(--border-radius);
+    z-index: 99;
+}
+
+li ul li {
+    /* här beräknas storleken på menyobjekten */
+    padding: calc(var(--menu-item-size)/2) 0;
+    
+    /* justera menyobjekten */
+    text-align: left;
+}
+
+/* storleken på länkarna i submenyn */
+li ul li a {
+    padding: calc(var(--menu-item-size) / 2) var(--menu-item-size);
+}
+
+/* selection */
+li ul li:hover {
+    background: var(--clr-hover);
+    border-radius: var(--border-radius);    
+}
+
+li ul li:hover > a {
+    color:var(--clr-accent);
+}
+
+
+
