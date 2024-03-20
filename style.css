@@ -101,10 +101,14 @@ p {
     font-size: calc(var(--menu-item-size) * 1.1);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--clr-accent);
 }
 
+.dropdown ul li .nav-link:focus {
+    outline: none;
+}
 
 /* dropdown styling */
 
@@ -156,24 +160,21 @@ li ul li {
 /* storleken på länkarna i submenyn */
 li ul li a {
     /* här beräknas storleken på menyobjekten */
-    padding: calc(var(--menu-item-size) / 2) var(--menu-item-size);
+    padding: calc(var(--menu-item-size) / 2) var(--menu-item-size); 
 }
 
-/* selection */
+/* markering */
 li ul li:hover,
 li ul li:focus-within {
     background: var(--clr-hover);
     border-radius: var(--border-radius);    
 }
 
-li ul li:active > a:hover {
-    background: var(--clr-copy);
-    border-radius: var(--border-radius);    
-}
-
-li ul li:hover > a {
+li ul li:hover > .nav-link,
+li ul li:focus > .nav-link {
     color:var(--clr-accent);
 }
+
 
 /* pil bara för submenus */
 li .dropdown::after {
