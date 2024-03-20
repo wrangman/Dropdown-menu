@@ -12,7 +12,8 @@
     --clr-white: hsl(0, 0%, 99%);   
     --clr-submenu-background: white;      /* submenyns bakgrund */
     
-    --clr-hover: #e6e6e6;
+    --clr-hover: #e6e6e6;                 /* hover färg */
+    --clr-active: var(--clr-copy);          /* färg man klickar */
 
     --clr-box-shadow: 0 3px 6px rgb(178, 178, 178);
      
@@ -104,6 +105,11 @@ p {
     outline: none;
 }
 
+/* vill du ha en linje mellan varje dropdown objekt? */
+/* .dropdown ul .dropdown {
+    border-top: 1px solid var(--clr-hover);
+} */
+
 /* dropdown styling */
 
 ul {
@@ -179,7 +185,7 @@ li ul li a:focus-within {
 }
 
 li ul li a:active {
-    background: var(--clr-copy);
+    background: var(--clr-active);
     
 }
 
