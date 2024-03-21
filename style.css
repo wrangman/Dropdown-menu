@@ -102,18 +102,6 @@ p {
 
 /* dropdown styling */
 
-/* FIXME: ta bort fokus-ytterlinjen */
-/* 
-.dropdown ul li .nav-link:focus {
-    outline: none;
-} */
-
-
-/* FIXME: vill du ha en linje mellan varje dropdown objekt? */
-/* .dropdown ul .dropdown {
-    border-top: 1px solid var(--clr-hover);
-} */
-
 ul li ul li {
     margin-block: 0;
     padding-block: 0;
@@ -195,5 +183,17 @@ li .dropdown::after {
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* FIXME: ta bort fokus-ytterlinjen */
+/* 
+.dropdown ul li .nav-link:focus {
+    outline: none;
+} */
+
+
+/* FIXME: vill du ha en linje mellan varje dropdown objekt? */
+.dropdown ul .dropdown:not(:first-child) {
+    border-top: 1px solid var(--clr-hover);
+} 
 
 
