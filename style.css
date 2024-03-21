@@ -12,17 +12,16 @@
     --clr-white: hsl(0, 0%, 99%);   
     --clr-submenu-background: white;      /* submenyns bakgrund */
     
-    --clr-hover: #e6e6e6;                 /* hover färg */
-    --clr-active: var(--clr-copy);          /* färg man klickar */
+    --clr-hover: hsl(270, 38%, 87%);                 /* hover färg */
+    --clr-active: var(--clr-secondary);          /* färg man klickar */
 
     --clr-box-shadow: 0 3px 6px rgb(178, 178, 178);
      
-    --menu-dropdown-size: 1em;        /* hur stora ska menyobjekten vara? */
-    --menu-item-size: 1em;        /* hur stora ska menyobjekten vara? */
+    --menu-dropdown-size: 1em;        /* hur stora ska dropdown-menyn vara? */
+    --menu-item-size: 1em;            /* hur stort ska gränssnittet vara? */
+    --border-radius: 0.250rem;        /* rundade kanter */
     
     --ff-primary: 'Segoe UI', sans-serif;
-
-    --border-radius: 0.250rem;
 }
 
 *,
@@ -48,7 +47,7 @@ header {
     top:0;
 
     display: flex;
-    gap: calc(0.5rem + var(--menu-item-size));
+    gap: calc(1.5rem + var(--menu-item-size));
     align-items: center;
     padding: calc(var(--menu-item-size) / 2) calc(var(--menu-item-size) * 2);
     
@@ -70,6 +69,7 @@ main {
     display: flex;
     gap: calc(0.05rem + var(--menu-item-size));
     list-style: none;
+    padding-inline: 0;
 }
 
 .logobrand {
@@ -114,16 +114,21 @@ p {
     border-top: 1px solid var(--clr-hover);
 } */
 
-
-.dropdown ul {
-    list-style: none;
-    margin-inline: 0;
-    padding-left: 0;
-}
-
 ul li ul li {
     margin-block: 0;
     padding-block: 0;
+}
+
+li ul li a {
+    /* justera menyobjekten */
+    text-align: left;
+}
+
+/* länkarna i dropdown-menyerna */
+li ul li a {
+    display: block;
+    /* här beräknas storleken på menyobjekten */
+    padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
 }
 
 /* se till att alla submenyer är stängda från början */
@@ -133,6 +138,11 @@ ul li ul li {
 
 .dropdown ul {
     position: absolute;
+
+    list-style: none;
+    margin-inline: 0;
+    padding-left: 0;
+
     /* ska menyn dyka upp högerjusterad?*/
     /* right: 0; */
     display: none;
@@ -151,7 +161,7 @@ ul li ul li {
     z-index: 99;
 }
 
-/*undermenyer (undermeny i undermeny) */
+/*undermenyer (meny i meny) */
 .dropdown ul .dropdown > ul {
     display: none;
     white-space: nowrap;
@@ -164,34 +174,20 @@ ul li ul li {
     top: 0;
 }
 
-li ul li a {
-    
-    /* justera menyobjekten */
-    text-align: left;
-}
-
-/* storleken på länkarna i submenyn */
-li ul li a {
-    display: block;
-    /* här beräknas storleken på menyobjekten */
-    padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
-}
-
 /* markering */
-li ul li a:hover,
-li ul li a:focus-within {
+.dropdown ul li a:hover,
+.dropdown ul li a:focus {
     background: var(--clr-hover);
-    color:var(--clr-accent);
     border-radius: var(--border-radius);
-
+    color: var(--clr-secondary);
 }
 
-li ul li a:active {
+.dropdown ul li a:active {
     background: var(--clr-active);
-    
+    color: var(--clr-white);
 }
 
-/* pil bara för submenus */
+/* pil bara för dropdown-menyer i menyer */
 li .dropdown::after {
     content: '>';
     position: absolute;
