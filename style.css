@@ -1,14 +1,14 @@
 
 /* global styling */
 
-/*ändra färger och inställningar här för din meny */
+/* TODO: ändra färger för din meny */
 :root {
     --clr-copy: #3a3a3a;                  /* normal text på sidan */
     --clr-black: #000;                    /* totalt svart används sparsamt */
     
     --clr-primary: hsl(0, 0%, 96%);       /* bakgrundsfärg och primära färgen */
     --clr-secondary: rebeccapurple;       /* menyfärg */
-    --clr-accent: orchid;                 /* hightlight CTA-färg  */
+    --clr-accent: orchid;                 /* highlight CTA-färg  */
     
     --clr-white: hsl(0, 0%, 99%);   
     --clr-submenu-background: white;      /* submenyns bakgrund */
@@ -121,21 +121,22 @@ li ul li a {
     padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
 }
 
-/* se till att alla submenyer är stängda från början */
 .dropdown {
     position: relative;
 }
 
 .dropdown ul {
     position: absolute;
-
+    /* se till att alla submenyer är stängda från början */
+    display: none;
+    
     list-style: none;
     margin-inline: 0;
-    padding-left: 0;
+    padding-inline: 0;
 
-    /* ska menyn dyka upp högerjusterad?*/
+    /* FIXME: ska menyn dyka upp högerjusterad?*/
     /* right: 0; */
-    display: none;
+
     white-space: nowrap;
 }
 
