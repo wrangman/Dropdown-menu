@@ -16,14 +16,12 @@
     --clr-hover: hsl(270, 38%, 87%);           /* hover färg */
     --clr-active: var(--clr-secondary);          /* färg man klickar */
 
-    --clr-box-shadow: 0 3px 6px rgb(178, 178, 178);
+    --clr-box-shadow: 0 3px 6px rgb(204, 204, 204);
     --clr-menu-shadow: var(--clr-box-shadow);    /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */    
      
     --menu-dropdown-size: 1em;        /* hur stora ska dropdown-menyn vara? */
     --menu-item-size: 1em;            /* hur stort ska gränssnittet vara? */
     --border-radius: 0.250rem;        /* rundade kanter */
-    
-    --ff-primary: 'Segoe UI', sans-serif;
 }
 
 *,
@@ -33,6 +31,8 @@
 }
 
 body {
+    --_ff-primary: 'Segoe UI', sans-serif;
+    
     margin: 0;
     padding: 0;
     
@@ -40,7 +40,7 @@ body {
     
     min-height: 100vh;
     
-    font-family: var(--ff-primary);
+    font-family: var(--_ff-primary);
     font-size: var(--menu-item-size);
 }
 
@@ -49,7 +49,7 @@ header {
     top:0;
 
     display: flex;
-    gap: calc(1.5rem + var(--menu-item-size));
+    gap: calc(1.5em + var(--menu-item-size));
     align-items: center;
     padding: calc(var(--menu-item-size) / 2) calc(var(--menu-item-size) * 2);
     
@@ -69,7 +69,7 @@ main {
 
 .primary-navigation {
     display: flex;
-    gap: calc(0.05rem + var(--menu-item-size));
+    gap: calc(0.5em + var(--menu-item-size));
     list-style: none;
     padding-inline: 0;
 }
