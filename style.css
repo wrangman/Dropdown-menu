@@ -4,6 +4,7 @@
 /*ändra färger och inställningar här för din meny */
 :root {
     --clr-copy: #3a3a3a;                  /* normal text på sidan */
+    --clr-black: #000;                    /* totalt svart används sparsamt */
     
     --clr-primary: hsl(0, 0%, 96%);       /* bakgrundsfärg och primära färgen */
     --clr-secondary: rebeccapurple;       /* menyfärg */
@@ -12,10 +13,11 @@
     --clr-white: hsl(0, 0%, 99%);   
     --clr-submenu-background: white;      /* submenyns bakgrund */
     
-    --clr-hover: hsl(270, 38%, 87%);                 /* hover färg */
+    --clr-hover: hsl(270, 38%, 87%);           /* hover färg */
     --clr-active: var(--clr-secondary);          /* färg man klickar */
 
     --clr-box-shadow: 0 3px 6px rgb(178, 178, 178);
+    --clr-menu-shadow: var(--clr-box-shadow);    /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */    
      
     --menu-dropdown-size: 1em;        /* hur stora ska dropdown-menyn vara? */
     --menu-item-size: 1em;            /* hur stort ska gränssnittet vara? */
@@ -75,8 +77,8 @@ main {
 .logobrand {
     font-size: calc(var(--menu-item-size) * 1.3);
     font-weight: bold;
+    color: var(--clr-black);
 }
-
 
 /* text styling */
 p {
@@ -143,7 +145,7 @@ li ul li a {
     display: block;
 
     background: var(--clr-submenu-background);
-    box-shadow: var(--clr-box-shadow);
+    box-shadow: var(--clr-menu-shadow);
 
     border-radius: var(--border-radius);
     z-index: 99;
