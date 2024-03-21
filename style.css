@@ -17,6 +17,7 @@
 
     --clr-box-shadow: 0 3px 6px rgb(178, 178, 178);
      
+    --menu-dropdown-size: 1em;        /* hur stora ska menyobjekten vara? */
     --menu-item-size: 1em;        /* hur stora ska menyobjekten vara? */
     
     --ff-primary: 'Segoe UI', sans-serif;
@@ -47,13 +48,10 @@ header {
     top:0;
 
     display: flex;
-    gap: 2rem;
-    
-    /* justify-content: space-between; */
+    gap: calc(0.5rem + var(--menu-item-size));
     align-items: center;
+    padding: calc(var(--menu-item-size) / 2) calc(var(--menu-item-size) * 2);
     
-    padding: var(--menu-item-size) calc(var(--menu-item-size) * 2);
-        
     background: var(--clr-white);
 
     box-shadow: var(--clr-box-shadow);
@@ -70,7 +68,7 @@ main {
 
 .primary-navigation {
     display: flex;
-    gap: 1.5rem;
+    gap: calc(0.05rem + var(--menu-item-size));
     list-style: none;
 }
 
@@ -101,21 +99,26 @@ p {
     color: var(--clr-accent);
 }
 
+
+/* dropdown styling */
+
+/* FIXME: ta bort fokus-ytterlinjen */
+/* 
 .dropdown ul li .nav-link:focus {
     outline: none;
-}
+} */
 
-/* vill du ha en linje mellan varje dropdown objekt? */
+
+/* FIXME: vill du ha en linje mellan varje dropdown objekt? */
 /* .dropdown ul .dropdown {
     border-top: 1px solid var(--clr-hover);
 } */
 
-/* dropdown styling */
 
-ul {
+.dropdown ul {
     list-style: none;
     margin-inline: 0;
-    padding-left:0;
+    padding-left: 0;
 }
 
 ul li ul li {
@@ -128,7 +131,7 @@ ul li ul li {
     position: relative;
 }
 
-.dropdown > ul {
+.dropdown ul {
     position: absolute;
     /* ska menyn dyka upp högerjusterad?*/
     /* right: 0; */
@@ -161,8 +164,7 @@ ul li ul li {
     top: 0;
 }
 
-li ul li {
-    padding: calc(var(--menu-item-size)/2) 0;
+li ul li a {
     
     /* justera menyobjekten */
     text-align: left;
@@ -172,7 +174,7 @@ li ul li {
 li ul li a {
     display: block;
     /* här beräknas storleken på menyobjekten */
-    padding: calc(var(--menu-item-size) / 2) var(--menu-item-size); 
+    padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
 }
 
 /* markering */
