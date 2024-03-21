@@ -125,11 +125,6 @@ p {
 
 /* dropdown styling */
 
-ul li ul li {
-    margin-block: 0;
-    padding-block: 0;
-}
-
 /* länkarna i dropdown-menyerna */
 li ul li a {
     display: block;
@@ -140,6 +135,10 @@ li ul li a {
     padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
 }
 
+.dropdown {
+    position: relative;
+}
+
 /* pil bara för dropdown-menyer i menyer */
 li .dropdown::after {
     content: '>';
@@ -147,10 +146,6 @@ li .dropdown::after {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.dropdown {
-    position: relative;
 }
 
 .dropdown ul {
