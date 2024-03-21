@@ -121,6 +121,15 @@ li ul li a {
     padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
 }
 
+/* pil bara för dropdown-menyer i menyer */
+li .dropdown::after {
+    content: '>';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .dropdown {
     position: relative;
 }
@@ -152,12 +161,6 @@ li ul li a {
     z-index: 99;
 }
 
-/*undermenyer (meny i meny) */
-.dropdown ul .dropdown > ul {
-    display: none;
-    white-space: nowrap;
-}
-
 .dropdown ul .dropdown:hover > ul,
 .dropdown ul .dropdown:focus-within > ul {
     display: block;
@@ -178,14 +181,6 @@ li ul li a {
     color: var(--clr-white);
 }
 
-/* pil bara för dropdown-menyer i menyer */
-li .dropdown::after {
-    content: '>';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 /* FIXME: ta bort fokus-ytterlinjen */
 /* 
