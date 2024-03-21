@@ -109,14 +109,12 @@ ul li ul li {
     padding-block: 0;
 }
 
-li ul li a {
-    /* justera menyobjekten */
-    text-align: left;
-}
-
 /* länkarna i dropdown-menyerna */
 li ul li a {
     display: block;
+
+    /* justera menyobjekten */
+    text-align: left;
     /* här beräknas storleken på menyobjekten */
     padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
 }
