@@ -61,10 +61,11 @@ header {
 }
 
 main {
-    margin-top: 3rem;
+    display: grid;
+    place-items: center;
 
-    width: 70%;
-    margin-inline: auto;
+    height: 50vh;
+    margin-top: 3rem;
 }
 
 .flex-layout {
