@@ -11,7 +11,7 @@
     --clr-accent: orchid;                 /* highlight CTA-färg  */
     
     --clr-white: hsl(0, 0%, 99%);   
-    --clr-dropdown-background: white;      /* submenyns bakgrund */
+    --clr-dropdown-background: white;      /* dropdown-menyns bakgrund */
     
     --clr-hover: hsl(270, 38%, 87%);           /* hover färg */
     --clr-active: var(--clr-secondary);          /* färg man klickar */
