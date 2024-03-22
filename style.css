@@ -11,7 +11,7 @@
     --clr-accent: orchid;                 /* highlight CTA-färg  */
     
     --clr-white: hsl(0, 0%, 99%);   
-    --clr-submenu-background: white;      /* submenyns bakgrund */
+    --clr-dropdown-background: white;      /* submenyns bakgrund */
     
     --clr-hover: hsl(270, 38%, 87%);           /* hover färg */
     --clr-active: var(--clr-secondary);          /* färg man klickar */
@@ -170,7 +170,7 @@ li .dropdown::after {
     /* FIXME: prova att göra display till flex och aktivera column här :) */
     /* flex-direction: column; */
 
-    background: var(--clr-submenu-background);
+    background: var(--clr-dropdown-background);
     box-shadow: var(--clr-menu-shadow);
 
     border-radius: var(--border-radius);
