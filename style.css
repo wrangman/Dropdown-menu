@@ -194,7 +194,7 @@ li .dropdown::after {
 
 .dropdown ul li a:active {
     background: var(--clr-active);
-    color: var(--clr-white);
+    color: var(--clr-hover);
 }
 
 
