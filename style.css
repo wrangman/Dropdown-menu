@@ -166,9 +166,8 @@ li .dropdown::after {
 /* öppna dropdown meny */
 .dropdown:hover > ul,
 .dropdown:focus-within > ul {
-    /* FIXME: för horisontell meny: display till flex och aktivera column här :) */
+    /* FIXME: för horisontell meny: display till flex :) */
     display: block;
-    /* flex-direction: column; */
 
     background: var(--clr-dropdown-background);
     box-shadow: var(--clr-menu-shadow);
@@ -180,7 +179,8 @@ li .dropdown::after {
 .dropdown ul .dropdown:hover > ul,
 .dropdown ul .dropdown:focus-within > ul {
     display: block;
-    left: 100%;
+    /* FIXME: ändra till right: 100% om du har högerjusterad meny*/
+    left: 100%; 
     top: 0;
 }
 
@@ -196,12 +196,6 @@ li .dropdown::after {
     background: var(--clr-active);
     color: var(--clr-hover);
 }
-
-/* FIXME: ta bort fokus-ytterlinjen */
-/* 
-.dropdown ul li .nav-link:focus {
-    outline: none;
-} */
 
 /* FIXME: vill du ha en linje mellan varje dropdown objekt? 
 OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra till border-left här */
