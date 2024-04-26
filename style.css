@@ -65,6 +65,22 @@ main {
     place-items: center;
 
     height: 80vh;
+    padding-inline: 1rem;
+    text-align: center;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (width < 860px) {
+    nav {
+        justify-content: flex-end;
+    }
 }
 
 .flex-layout {
@@ -184,6 +200,14 @@ li .dropdown::after {
     top: 0;
 }
 
+@media (width < 860px) {
+    .dropdown ul .dropdown:hover > ul,
+    .dropdown ul .dropdown:focus-within > ul {
+    left: 30%;
+    top: 100%;
+}
+}
+
 /* markering */
 .dropdown ul li a:hover,
 .dropdown ul li a:focus {
@@ -204,3 +228,43 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
 } 
 
 
+/* buttons */
+
+.hamburger-button {
+    all: unset;
+    display: none;
+    place-items: center;
+}
+
+/* mobile view */
+
+@media (width < 860px) {
+    .hamburger-button {
+        display: grid;
+    }
+
+    .primary-navigation {
+        position: fixed;
+        inset: 0;
+        top: 4.2rem;
+
+        display: flex;
+        justify-content: start;
+      
+        flex-direction: column;
+        
+        padding: 4rem 2rem;
+        
+        background: white;
+        opacity: 0;
+
+        transform: translateX(100%);
+        transition: transform 250ms ease-in-out,
+                    opacity 250ms ease-in-out;
+    }
+
+    .primary-navigation.open {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
