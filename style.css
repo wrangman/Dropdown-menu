@@ -200,12 +200,12 @@ li .dropdown::after {
     top: 0;
 }
 
-@media (width < 860px) {
+@media (width < 480px) {
     .dropdown ul .dropdown:hover > ul,
     .dropdown ul .dropdown:focus-within > ul {
-    left: 30%;
-    top: 100%;
-}
+        left: 30%;
+        top: 100%;
+    }
 }
 
 /* markering */
