@@ -122,6 +122,10 @@ p {
     color: var(--clr-copy);
 }
 
+.italic {
+    font-style: italic;
+}
+
 
 /* link styling */
 .nav-link,
@@ -243,17 +247,25 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
         display: grid;
     }
 
+    .nav-link {
+        display: block;
+        position: relative;
+        padding-block: 1rem;
+        margin-block: 0;
+    }
+
     .primary-navigation {
         position: fixed;
         inset: 0;
         top: 4.2rem;
+        height: 100%;
 
         display: flex;
         justify-content: start;
       
         flex-direction: column;
         
-        padding: 4rem 2rem;
+        padding: 2rem 2rem;
         
         background: white;
         opacity: 0;
