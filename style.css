@@ -267,7 +267,7 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
         
         padding: 2rem 2rem;
         
-        background: var(--clr-primary);
+        background: var(--clr-white);
         opacity: 0;
 
         transform: translateX(100%);
