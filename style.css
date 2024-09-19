@@ -15,8 +15,8 @@
   --clr-hover: rgb(101, 101, 101); /* hover färg */
   --clr-active: var(--clr-secondary); /* färg man klickar */
 
-  --clr-box-shadow: 0px 0px 16px var(--clr-secondary);
-  --clr-menu-shadow: var(--clr-box-shadow); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
+  --clr-nav-shadow: none;
+  --clr-menu-shadow: 0px 0px 16px var(--clr-secondary); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
 
   --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
@@ -54,7 +54,7 @@ header {
   padding: calc(var(--menu-item-size) / 3) calc(var(--menu-item-size) * 2);
 
   background: var(--clr-white);
-  box-shadow: var(--clr-box-shadow);
+  box-shadow: var(--clr-nav-shadow);
 
   z-index: 1;
 }
