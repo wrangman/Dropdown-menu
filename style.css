@@ -256,7 +256,7 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
   .primary-navigation {
     position: fixed;
     inset: 0;
-    top: 4.2rem;
+    top: 4.0rem;
     height: 100%;
 
     display: flex;
