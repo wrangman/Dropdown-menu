@@ -9,8 +9,8 @@
   --clr-secondary: rgb(239, 75, 236); /* menyfärg */
   --clr-accent: rgb(39, 218, 224); /* highlight CTA-färg  */
 
-  --clr-white: #3a3a3a;
-  --clr-dropdown-background: rgb(80, 80, 80); /* dropdown-menyns bakgrund */
+  --clr-white: #272727;
+  --clr-dropdown-background: rgb(55, 55, 55); /* dropdown-menyns bakgrund */
 
   --clr-hover: rgb(101, 101, 101); /* hover färg */
   --clr-active: var(--clr-secondary); /* färg man klickar */
