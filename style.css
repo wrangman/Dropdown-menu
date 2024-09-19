@@ -1,282 +1,281 @@
-
 /* global styling */
 
 /* TODO: ändra färger för din meny */
 :root {
-    --clr-copy: #3a3a3a;                  /* normal text på sidan */
-    --clr-black: #000;                    /* totalt svart används sparsamt */
-    
-    --clr-primary: hsl(0, 0%, 96%);       /* bakgrundsfärg och primära färgen */
-    --clr-secondary: rebeccapurple;       /* menyfärg */
-    --clr-accent: orchid;                 /* highlight CTA-färg  */
-    
-    --clr-white: hsl(0, 0%, 99%);   
-    --clr-dropdown-background: white;      /* dropdown-menyns bakgrund */
-    
-    --clr-hover: hsl(270, 38%, 87%);           /* hover färg */
-    --clr-active: var(--clr-secondary);          /* färg man klickar */
+  --clr-copy: #d2d2d2; /* normal text på sidan */
+  --clr-black: #ffffff; /* totalt svart används sparsamt */
 
-    --clr-box-shadow: 0 3px 6px rgb(204, 204, 204);
-    --clr-menu-shadow: var(--clr-box-shadow);    /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */    
-     
-    --menu-dropdown-size: 1em;        /* hur stora ska dropdown-menyn vara? */
-    --menu-item-size: 1em;            /* hur stort ska gränssnittet vara? */
-    --border-radius: 0.250rem;        /* rundade kanter */
+  --clr-primary: #161616; /* bakgrundsfärg och primära färgen */
+  --clr-secondary: rgb(239, 75, 236); /* menyfärg */
+  --clr-accent: rgb(39, 218, 224); /* highlight CTA-färg  */
+
+  --clr-white: #3a3a3a;
+  --clr-dropdown-background: rgb(80, 80, 80); /* dropdown-menyns bakgrund */
+
+  --clr-hover: rgb(101, 101, 101); /* hover färg */
+  --clr-active: var(--clr-secondary); /* färg man klickar */
+
+  --clr-box-shadow: 0px 0px 16px var(--clr-secondary);
+  --clr-menu-shadow: var(--clr-box-shadow); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
+
+  --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
+  --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
+  --border-radius: 0.5rem; /* rundade kanter */
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    --_ff-primary: 'Segoe UI', sans-serif;
-    
-    margin: 0;
-    padding: 0;
-    
-    background-color: var(--clr-primary);
-    
-    min-height: 100vh;
-    
-    font-family: var(--_ff-primary);
-    font-size: var(--menu-item-size);
+  --_ff-primary: "Segoe UI", sans-serif;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--clr-primary);
+
+  min-height: 100vh;
+
+  font-family: var(--_ff-primary);
+  font-size: var(--menu-item-size);
 }
 
 header {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 
-    display: flex;
-    align-items: center;
-    gap: calc(var(--menu-item-size) + 3em);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--menu-item-size) + 3em);
 
-    padding: calc(var(--menu-item-size) / 2) calc(var(--menu-item-size) * 2);
-    
-    background: var(--clr-white);
-    box-shadow: var(--clr-box-shadow);
+  padding: calc(var(--menu-item-size) / 2) calc(var(--menu-item-size) * 2);
 
-    z-index: 1;
+  background: var(--clr-white);
+  box-shadow: var(--clr-box-shadow);
+
+  z-index: 1;
 }
 
 main {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 
-    height: 80vh;
-    padding-inline: 1rem;
-    text-align: center;
+  height: 80vh;
+  padding-inline: 1rem;
+  text-align: center;
 }
 
-
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 @media (width < 860px) {
-    nav {
-        justify-content: flex-end;
-    }
+  nav {
+    justify-content: flex-end;
+  }
 }
 
 .flex-layout {
-    display: flex;
-    align-items: center;
-    gap: var(--menu-item-size);
+  display: flex;
+  align-items: center;
+  gap: var(--menu-item-size);
 }
 
 .primary-navigation {
-    display: flex;
-    gap: calc(0.5em + var(--menu-item-size));
-    list-style: none;
-    padding-inline: 0;
+  display: flex;
+  gap: calc(0.5em + var(--menu-item-size));
+  list-style: none;
+  padding-inline: 0;
 }
 
 .logo-brand {
-    font-size: calc(var(--menu-item-size) * 1.3);
-    font-weight: bold;
-    color: var(--clr-black);
+  font-size: calc(var(--menu-item-size) * 1.3);
+  font-weight: bold;
+  color: var(--clr-accent);
 }
-
 
 /* image styling */
 
 img {
-    display: block;
-    object-fit: cover;
-    max-width: 100%;
-    font-style: italic;
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  font-style: italic;
 }
 
 .logo {
-    max-width: 22%;
+  width: calc(var(--menu-item-size) * 1.3);
+
+}
+
+.logo g path{
+  fill: var(--clr-accent); /* You can change this to any color */
 }
 
 
 /* text styling */
 p {
-    color: var(--clr-copy);
+  color: var(--clr-copy);
 }
 
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
-
 
 /* link styling */
 .nav-link,
 .nav-link:visited {
-    text-decoration: none;
-    color: var(--clr-secondary);
-    
-    font-weight: 500;
-    font-size: calc(var(--menu-item-size) * 1.1);
+  text-decoration: none;
+  color: var(--clr-secondary);
+
+  font-weight: 500;
+  font-size: calc(var(--menu-item-size) * 1.1);
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--clr-accent);
+  color: var(--clr-accent);
 }
-
 
 /* dropdown styling */
 
 /* länkarna i dropdown-menyerna */
 li ul li a {
-    display: block;
+  display: block;
 
-    /* justera menyobjekten */
-    text-align: left;
-    /* här beräknas storleken på menyobjekten */
-    padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size); 
+  /* justera menyobjekten */
+  text-align: left;
+  /* här beräknas storleken på menyobjekten */
+  padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size);
 }
 
 .dropdown {
-    position: relative;
+  position: relative;
 }
 
 /* pil bara för dropdown-menyer i menyer */
 li .dropdown::after {
-    content: '>';
-    position: absolute;
-    right: 0.3rem;
-    top: 50%;
-    transform: translateY(-50%);
+  content: ">";
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--clr-secondary);
 }
 
 .dropdown ul {
-    position: absolute;
-    /* se till att alla submenyer är stängda från början */
-    display: none;
-    
-    list-style: none;
-    margin-inline: 0;
-    padding-inline: 0;
+  position: absolute;
+  /* se till att alla submenyer är stängda från början */
+  display: none;
 
-    /* FIXME: ska menyn dyka upp högerjusterad?*/
-    /* right: 0; */
+  list-style: none;
+  margin-inline: 0;
+  padding-inline: 0;
 
-    white-space: nowrap;
+  /* FIXME: ska menyn dyka upp högerjusterad?*/
+  /* right: 0; */
+
+  white-space: nowrap;
 }
 
 /* öppna dropdown meny */
 .dropdown:hover > ul,
 .dropdown:focus-within > ul {
-    /* FIXME: för horisontell meny: display till flex :) */
-    display: block;
+  /* FIXME: för horisontell meny: display till flex :) */
+  display: block;
 
-    background: var(--clr-dropdown-background);
-    box-shadow: var(--clr-menu-shadow);
+  background: var(--clr-dropdown-background);
+  box-shadow: var(--clr-menu-shadow);
 
-    border-radius: var(--border-radius);
-    z-index: 99;
+  border-radius: var(--border-radius);
+  z-index: 99;
 }
 
 .dropdown ul .dropdown:hover > ul,
 .dropdown ul .dropdown:focus-within > ul {
-    display: block;
-    /* FIXME: ändra till right: 100% om du har högerjusterad meny*/
-    left: 100%; 
-    top: 0;
+  display: block;
+  /* FIXME: ändra till right: 100% om du har högerjusterad meny*/
+  left: 100%;
+  top: 0;
 }
 
 @media (width < 480px) {
-    .dropdown ul .dropdown:hover > ul,
-    .dropdown ul .dropdown:focus-within > ul {
-        left: 30%;
-        top: 100%;
-    }
+  .dropdown ul .dropdown:hover > ul,
+  .dropdown ul .dropdown:focus-within > ul {
+    left: 30%;
+    top: 100%;
+  }
 }
 
 /* markering */
 .dropdown ul li a:hover,
 .dropdown ul li a:focus {
-    background: var(--clr-hover);
-    border-radius: var(--border-radius);
-    color: var(--clr-secondary);
+  background: var(--clr-hover);
+  border-radius: var(--border-radius);
+  color: var(--clr-secondary);
 }
 
 .dropdown ul li a:active {
-    background: var(--clr-active);
-    color: var(--clr-hover);
+  background: var(--clr-active);
+  color: var(--clr-hover);
 }
 
 /* FIXME: vill du ha en linje mellan varje dropdown objekt? 
 OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra till border-left här */
 .dropdown ul .dropdown:not(:first-child) {
-    border-top: 1px solid var(--clr-hover);
-} 
-
+  border-top: 1px solid var(--clr-hover);
+}
 
 /* buttons */
 
 .hamburger-button {
-    all: unset;
-    display: none;
-    place-items: center;
+  all: unset;
+  display: none;
+  place-items: center;
 }
 
 /* mobile view */
 
 @media (width < 860px) {
-    .hamburger-button {
-        display: grid;
-    }
+  .hamburger-button {
+    display: grid;
+  }
 
-    .nav-link {
-        display: block;
-        position: relative;
-        padding-block: 1rem;
-        margin-block: 0;
-    }
+  .nav-link {
+    display: block;
+    position: relative;
+    padding-block: 1rem;
+    margin-block: 0;
+  }
 
-    .primary-navigation {
-        position: fixed;
-        inset: 0;
-        top: 4.2rem;
-        height: 100%;
+  .primary-navigation {
+    position: fixed;
+    inset: 0;
+    top: 4.2rem;
+    height: 100%;
 
-        display: flex;
-        justify-content: start;
-      
-        flex-direction: column;
-        
-        padding: 2rem 2rem;
-        
-        background: var(--clr-white);
-        opacity: 0;
+    display: flex;
+    justify-content: start;
 
-        transform: translateX(100%);
-        transition: transform 250ms ease-in-out,
-                    opacity 250ms ease-in-out;
-    }
+    flex-direction: column;
 
-    .primary-navigation.open {
-      transform: translateX(0);
-      opacity: 1;
-   }
+    padding: 2rem 2rem;
+
+    background: var(--clr-white);
+    opacity: 0;
+
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  }
+
+  .primary-navigation.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
