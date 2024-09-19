@@ -3,20 +3,19 @@
 /* TODO: ändra färger för din meny */
 :root {
   --clr-copy: #d2d2d2; /* normal text på sidan */
-  --clr-black: #ffffff; /* totalt svart används sparsamt */
 
   --clr-primary: #161616; /* bakgrundsfärg och primära färgen */
   --clr-secondary: rgb(239, 75, 236); /* menyfärg */
   --clr-accent: rgb(39, 218, 224); /* highlight CTA-färg  */
 
-  --clr-white: #272727;
+  --clr-navbar: #272727;
   --clr-dropdown-background: rgb(55, 55, 55); /* dropdown-menyns bakgrund */
 
   --clr-hover: rgb(101, 101, 101); /* hover färg */
   --clr-active: var(--clr-secondary); /* färg man klickar */
 
-  --clr-nav-shadow: none;
-  --clr-menu-shadow: 0px 0px 16px var(--clr-secondary); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
+  --clr-navbar-shadow: none;
+  --clr-menu-shadow: 0px 0px 16px rgb(158, 19, 156); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
 
   --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
@@ -53,8 +52,8 @@ header {
 
   padding: calc(var(--menu-item-size) / 3) calc(var(--menu-item-size) * 2);
 
-  background: var(--clr-white);
-  box-shadow: var(--clr-nav-shadow);
+  background: var(--clr-navbar);
+  box-shadow: var(--clr-navbar-shadow);
 
   z-index: 1;
 }
@@ -267,7 +266,7 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
 
     padding: 2rem 2rem;
 
-    background: var(--clr-white);
+    background: var(--clr-navbar);
     opacity: 0;
 
     transform: translateX(100%);
