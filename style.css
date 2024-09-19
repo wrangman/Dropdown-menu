@@ -51,7 +51,7 @@ header {
   align-items: center;
   gap: calc(var(--menu-item-size) + 3em);
 
-  padding: calc(var(--menu-item-size) / 2) calc(var(--menu-item-size) * 2);
+  padding: calc(var(--menu-item-size) / 3) calc(var(--menu-item-size) * 2);
 
   background: var(--clr-white);
   box-shadow: var(--clr-box-shadow);
