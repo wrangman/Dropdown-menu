@@ -2,25 +2,26 @@
 
 /* TODO: ändra färger för din meny */
 :root {
-  --clr-copy: #d2d2d2; /* normal text på sidan */
+  --clr-copy: #3a3a3a; /* normal text på sidan */
 
-  --clr-primary: #161616; /* bakgrundsfärg och primära färgen */
-  --clr-secondary: rgb(228, 228, 228); /* menyfärg */
-  --clr-accent: rgb(39, 218, 224); /* highlight CTA-färg  */
+  --clr-primary: hsl(0, 0%, 96%); /* bakgrundsfärg och primära färgen */
+  --clr-secondary: rebeccapurple; /* menyfärg */
+  --clr-accent: rgb(245, 7, 237); /* highlight CTA-färg  */
 
-  --clr-navbar: #272727;
-  --clr-dropdown-background: rgb(55, 55, 55); /* dropdown-menyns bakgrund */
+  --clr-navbar: hsl(0, 0%, 99%);
+  --clr-dropdown-background: white; /* dropdown-menyns bakgrund */
 
-  --clr-hover: rgb(101, 101, 101); /* hover färg */
+  --clr-hover: hsl(270, 38%, 87%); /* hover färg */
   --clr-active: var(--clr-secondary); /* färg man klickar */
 
-  --clr-navbar-shadow: none;
-  --clr-menu-shadow: 0px 0px 16px hsl(0 0% 89% / 0.5); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
+  --clr-navbar-shadow: 0 4px 16px rgb(227, 227, 227);
+  --clr-menu-shadow: 0 4px 32px  rgb(227, 227, 227); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
 
   --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
   --border-radius: 0.5rem; /* rundade kanter */
 }
+
 
 *,
 *::before,
