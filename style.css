@@ -80,13 +80,6 @@ nav {
   justify-content: space-between;
 }
 
-@media (width < 860px) {
-  nav {
-    justify-content: flex-end;
-    width: 100%;
-  }
-}
-
 .flex-layout {
   display: flex;
   align-items: center;
@@ -158,7 +151,8 @@ p {
   place-items: center;
 }
 
-/* mobile view */
+
+/* responsivitet - mobile view */
 
 @media (width < 860px) {
   .hamburger-button {
@@ -195,5 +189,11 @@ p {
   .primary-navigation.open {
     transform: translateX(0);
     opacity: 1;
+  }
+
+
+  nav {
+    justify-content: flex-end;
+    width: 100%;
   }
 }

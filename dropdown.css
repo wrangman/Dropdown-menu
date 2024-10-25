@@ -86,7 +86,7 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
 }
 
 
-/* Responsivitet - öppna i hamburgermenyn */
+/* responsivitet - mobile view - öppna dropdown i hamburgermenyn */
 
 @media (width < 860px) {
 /* öppna dropdown meny */
