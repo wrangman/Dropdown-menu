@@ -241,7 +241,7 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
 }
 
 
-/* responsivitet - mobile view - öppna dropdown i hamburgermenyn */
+/* responsivitet - mobile view */
 
 @media (width < 860px) {
 /* öppna dropdown meny */
@@ -261,9 +261,6 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
       top: 100%;
   }
 }
-
-
-/* responsivitet - mobile view */
 
 @media (width < 860px) {
   .hamburger-button {
