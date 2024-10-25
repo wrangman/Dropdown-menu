@@ -1,3 +1,9 @@
+/***************************************
+
+STYLE.CSS - global styling för webbsidan
+
+****************************************/
+
 /* global styling */
 
 /* TODO: ändra färger för din meny */
@@ -72,12 +78,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 @media (width < 860px) {
   nav {
     justify-content: flex-end;
+    width: 100%;
   }
 }
 
@@ -129,7 +135,7 @@ p {
 }
 
 /* link styling */
-.nav-link,
+.nav-link:link,
 .nav-link:visited {
   text-decoration: none;
   color: var(--clr-secondary);
@@ -143,94 +149,6 @@ p {
   color: var(--clr-accent);
 }
 
-/* dropdown styling */
-
-/* länkarna i dropdown-menyerna */
-li ul li a {
-  display: block;
-
-  /* justera menyobjekten */
-  text-align: left;
-  /* här beräknas storleken på menyobjekten */
-  padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size);
-}
-
-.dropdown {
-  position: relative;
-}
-
-/* pil bara för dropdown-menyer i menyer */
-li .dropdown::after {
-  content: ">";
-  position: absolute;
-  right: 0.3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--clr-secondary);
-}
-
-.dropdown ul {
-  position: absolute;
-  /* se till att alla submenyer är stängda från början */
-  display: none;
-
-  list-style: none;
-  margin-inline: 0;
-  padding-inline: 0;
-
-  /* FIXME: ska menyn dyka upp högerjusterad?*/
-  /* right: 0; */
-
-  white-space: nowrap;
-}
-
-/* öppna dropdown meny */
-.dropdown:hover > ul,
-.dropdown:focus-within > ul {
-  /* FIXME: för horisontell meny: display till flex :) */
-  display: block;
-
-  background: var(--clr-dropdown-background);
-  box-shadow: var(--clr-menu-shadow);
-
-  border-radius: var(--border-radius);
-  z-index: 99;
-}
-
-.dropdown ul .dropdown:hover > ul,
-.dropdown ul .dropdown:focus-within > ul {
-  display: block;
-  /* FIXME: ändra till right: 100% om du har högerjusterad meny*/
-  left: 100%;
-  top: 0;
-}
-
-@media (width < 480px) {
-  .dropdown ul .dropdown:hover > ul,
-  .dropdown ul .dropdown:focus-within > ul {
-    left: 30%;
-    top: 100%;
-  }
-}
-
-/* markering */
-.dropdown ul li a:hover,
-.dropdown ul li a:focus {
-  background: var(--clr-hover);
-  border-radius: var(--border-radius);
-  color: var(--clr-secondary);
-}
-
-.dropdown ul li a:active {
-  background: var(--clr-active);
-  color: var(--clr-hover);
-}
-
-/* FIXME: vill du ha en linje mellan varje dropdown objekt? 
-OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra till border-left här */
-.dropdown ul .dropdown:not(:first-child) {
-  border-top: 1px solid var(--clr-hover);
-}
 
 /* buttons */
 
