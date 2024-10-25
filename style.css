@@ -26,8 +26,13 @@ STYLE.CSS - global styling för webbsidan
   --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
   --border-radius: 0.5rem; /* rundade kanter */
+
+  /*TODO: Ändra typsnitt här om du vill (kanske mest intressant när du använder denna dropdown i ditt projekt)*/
+  --ff-primary: "Segoe UI", sans-serif;
 }
 
+
+/* layout styling */
 
 *,
 *::before,
@@ -36,7 +41,6 @@ STYLE.CSS - global styling för webbsidan
 }
 
 body {
-  --_ff-primary: "Segoe UI", sans-serif;
 
   margin: 0;
   padding: 0;
@@ -45,7 +49,7 @@ body {
 
   min-height: 100vh;
 
-  font-family: var(--_ff-primary);
+  font-family: var(--ff-primary);
   font-size: var(--menu-item-size);
 }
 
@@ -99,6 +103,7 @@ nav {
   color: var(--clr-accent);
 }
 
+
 /* image styling */
 
 img {
@@ -114,7 +119,7 @@ img {
 }
 
 .logo g path{
-  fill: var(--clr-accent); /* You can change this to any color */
+  fill: var(--clr-accent); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-accent eller ändra här */
 }
 
 
@@ -126,6 +131,7 @@ p {
 .italic {
   font-style: italic;
 }
+
 
 /* link styling */
 .nav-link:link,
@@ -149,6 +155,111 @@ p {
   all: unset;
   display: none;
   place-items: center;
+}
+
+
+/* dropdown styling */
+
+/* länkarna i dropdown-menyerna */
+li ul li a {
+  display: block;
+  
+  /* här beräknas storleken på menyobjekten */
+  padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size);
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* pil bara för dropdown-menyer i menyer */
+/* TODO: Om du har högerjusterad meny kanske du vill ändra här. Ändra pil i content och ändra right till left: 0.3rem */
+li .dropdown::after {
+  content: ">";
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--clr-secondary);
+}
+
+/* undermenyer */
+.dropdown ul {
+  position: absolute;
+  /* se till att alla undermenyer är stängda från början */
+  display: none;
+
+  list-style: none;
+  margin-inline: 0;
+  padding-inline: 0;
+
+  /* TODO: vill du att menyn ska dyka upp högerjusterad? ta bort kommentarerna runt nedanstående egenskap: */
+  /* right: 0; */
+
+  white-space: nowrap;
+}
+
+/* öppna dropdown-meny */
+.dropdown:hover > ul,
+.dropdown:focus-within > ul {
+  /* TODO: för horisontell meny: ändra display till flex :) */
+  display: block;
+
+  background: var(--clr-dropdown-background);
+  box-shadow: var(--clr-menu-shadow);
+
+  border-radius: var(--border-radius);
+  z-index: 99;
+}
+
+.dropdown ul .dropdown:hover > ul,
+.dropdown ul .dropdown:focus-within > ul {
+  display: block;
+
+  /* FIXME: ändra till right: 100% om du har högerjusterad meny*/
+  left: 100%;
+  top: 0;
+}
+
+/* markering */
+.dropdown ul li a:hover,
+.dropdown ul li a:focus {
+  background: var(--clr-hover);
+  border-radius: var(--border-radius);
+  color: var(--clr-secondary);
+}
+
+.dropdown ul li a:active {
+  background: var(--clr-active);
+  color: var(--clr-hover);
+}
+
+/* TODO: vill du ha en linje mellan varje dropdown objekt? 
+OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra till border-left här */
+.dropdown ul .dropdown:not(:first-child) {
+  border-top: 1px solid var(--clr-hover);
+}
+
+
+/* responsivitet - mobile view - öppna dropdown i hamburgermenyn */
+
+@media (width < 860px) {
+/* öppna dropdown meny */
+  .dropdown:hover > ul,
+  .dropdown:focus-within > ul {
+      display: block;
+
+      border-radius: 0;
+      
+      width: 100%;
+  }
+
+  .dropdown ul .dropdown:hover > ul,
+  .dropdown ul .dropdown:focus-within > ul {
+      display: block;
+      left: 0;
+      top: 100%;
+  }
 }
 
 
@@ -190,7 +301,6 @@ p {
     transform: translateX(0);
     opacity: 1;
   }
-
 
   nav {
     justify-content: flex-end;
