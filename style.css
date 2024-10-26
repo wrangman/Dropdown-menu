@@ -20,8 +20,8 @@ STYLE.CSS - global styling för webbsidan
   --clr-hover: hsl(270, 38%, 87%); /* hover färg */
   --clr-active: var(--clr-secondary); /* färg man klickar */
 
-  --clr-navbar-shadow: 0 4px 16px rgb(227, 227, 227);
-  --clr-menu-shadow: 0 4px 32px  rgb(227, 227, 227); /* ett tips är att använda en mörkare färg av själva dropdown-meny-bakgrunden */
+  --clr-navbar-shadow: 0 4px 12px hsl(0, 0%, 89%); /* för ljus UI använd en ljusgrå nyans */
+  --clr-menu-shadow: 0 4px 24px  hsl(0, 0%, 89%); /* för mörkt UI använd en ljusare nyans av bakgrunden här */
 
   --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
