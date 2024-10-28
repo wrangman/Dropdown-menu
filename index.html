@@ -7,7 +7,7 @@
     <title>dropDown-exempel</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dropdown.css">
+    
     <script src="menu.js" defer></script>   <!--defer betyder att skriptet kommer köras efter hela sidan har laddats. -->
 </head>
 <body>
@@ -53,9 +53,9 @@
         </ul>
         <button class="hamburger-button" id="hamburger-button" aria-label="hamburger-button" aria-expanded="false">
             <svg fill="var(--clr-secondary)" class="icon-hamburger" viewbox="0 0 100 100" width="32">
-                <rect class="line top" width="90" height="5" x="10" y="30" rx="3"></rect>
-                <!-- <rect class="line middle" width="90" height="10" x="10" y="45" rx="5"></rect> -->
-                <rect class="line bottom" width="70" height="5" x="30" y="60" rx="3"></rect>
+                <rect class="line top" width="90" height="3" x="5" y="40" rx="2"></rect>
+                <!-- <rect class="line middle" width="90" height="6" x="5" y="45" rx="5"></rect> -->
+                <rect class="line bottom" width="90" height="3" x="5" y="60" rx="2"></rect>    
             </svg>
         </button>
     </nav>
@@ -63,6 +63,7 @@
     </header>
     <main>
         <p class="italic">Detta exempel visar hur man kan bygga en dropdown-meny</p>
+        <p class="italic">Vänligen gå in i <span class="bold">style.css</span> och ändra färger och storlek på menyn</p>
     </main>
     <footer>
     </footer>
