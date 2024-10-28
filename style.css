@@ -11,7 +11,7 @@ STYLE.CSS - global styling för webbsidan
   --clr-copy: #3a3a3a;    /* brödtext på sidan */
 
   --clr-primary: #f6f6f6;       /* bakgrundsfärg och primära färgen */
-  --clr-secondary: rebeccapurple;       /* navigationsfärg */
+  --clr-secondary: rebeccapurple;       /* navigationsfärg och bakgrundsfärg när man klickar  */
   --clr-cta: rgb(245, 7, 237);          /* CTA-färg */
   --clr-highlight: rgb(211, 21, 148);   /* highlight i menyn */
 
@@ -19,7 +19,7 @@ STYLE.CSS - global styling för webbsidan
   --clr-dropdown-background: white; /* dropdown-menyns bakgrund */
 
   --clr-hover: var(--clr-highlight);  /* markeringsfärg */
-  --clr-active: var(--clr-dropdown-background); /* färg man klickar */
+  --clr-active: var(--clr-dropdown-background); /* färg på text när man klickar */
   
   --clr-line: #ebebeb;              /* linje */
 
