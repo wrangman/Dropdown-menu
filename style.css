@@ -8,23 +8,23 @@ STYLE.CSS - global styling för webbsidan
 
 /* TODO: BÖRJA HÄR! ändra färger för din meny */
 :root {
-  --clr-copy: #3a3a3a; /* normal text på sidan */
+  --clr-copy: #3a3a3a;    /* brödtext på sidan */
 
-  --clr-primary: hsl(0, 0%, 96%);   /* bakgrundsfärg och primära färgen */
-  --clr-secondary: rebeccapurple;   /* menyfärg */
-  --clr-cta: rgb(245, 7, 237);     /* CTA-färg */
-  --clr-highlight: rgb(237, 15, 163);  /* highlight i menyn */
+  --clr-primary: #f6f6f6;       /* bakgrundsfärg och primära färgen */
+  --clr-secondary: rebeccapurple;       /* navigationsfärg */
+  --clr-cta: rgb(245, 7, 237);          /* CTA-färg */
+  --clr-highlight: rgb(211, 21, 148);   /* highlight i menyn */
 
-  --clr-navbar: hsl(0, 0%, 99%);
+  --clr-navbar: #fafafa;
   --clr-dropdown-background: white; /* dropdown-menyns bakgrund */
 
   --clr-hover: var(--clr-highlight);  /* markeringsfärg */
-  --clr-active: var(--clr-secondary); /* färg man klickar */
+  --clr-active: var(--clr-dropdown-background); /* färg man klickar */
   
   --clr-line: #ebebeb;              /* linje */
 
-  --clr-navbar-shadow: 0 4px 12px hsl(0, 0%, 89%); /* för ljus UI använd en ljusgrå nyans */
-  --clr-menu-shadow: 0 4px 24px  hsl(0, 0%, 89%); /* för mörkt UI använd en mörkare nyans av accent */
+  --clr-navbar-shadow: 0 4px 12px #d6d6d6; /* för ljus UI använd en ljusgrå nyans */
+  --clr-menu-shadow: 0 4px 24px  #d2d2d2; /* för mörkt UI använd en mörkare nyans av accent */
 
   --menu-dropdown-size: 1.5em;  /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em;        /* hur stort ska gränssnittet vara? */
@@ -214,12 +214,11 @@ li ul li a {
 }
 
 .dropdown .dropdown:hover::after {  
-  color: var(--clr-dropdown-background);
+  color: var(--clr-active);
 }
 
 .dropdown .dropdown:active::after {  
-  background: var(--clr-secondary);
-  color: var(--clr-hover);
+  color: var(--clr-active);
 }
 
 /* öppna dropdown-meny */
@@ -254,7 +253,7 @@ li ul li a {
 
 .dropdown ul li a:active {
   background: var(--clr-secondary);
-  color: var(--clr-hover);
+  color: var(--clr-active);
 }
 
 /* TODO: Vill du ha en linje mellan varje dropdown objekt? 
