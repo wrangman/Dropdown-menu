@@ -11,7 +11,7 @@
     <script src="menu.js" defer></script>   <!--defer betyder att skriptet kommer köras efter hela sidan har laddats. -->
 </head>
 <body>
-    <header>
+    <nav>
         <div class="flex-layout">
             <!--en SVG logo så jag kan ändra färg ... se i style.css under selector svg g path. -->
             <svg class="logo" id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.98 242.36">
@@ -27,42 +27,44 @@
             </svg>
             <p class="logo-brand">dropDown</p>
         </div>
-        <nav>
-            <ul class="primary-navigation" id="primary-navigation">
-                <li><a class="nav-link" href="index.html">Hem</a></li>
-                <!-- dropdown-meny skapas med dropdown-klass -->
-                <li class="dropdown">
-                    <a class="nav-link" href="#">Portfolio</a>
-                    <ul>
-                        <li><a class="nav-link" href="portfolio.html">Visa Allt</a></li>
-                         <!--undermeny-->
-                         <li class="dropdown">
-                            <a class="nav-link" href="#">Uppgifter</a>
-                            <ul>
-                                <li><a class="nav-link" href="#">Uppgift 1: Hello World</a></li>
-                                <li><a class="nav-link" href="#">Uppgift 2: Semantiska taggar</a></li>
-                                <li><a class="nav-link" href="#">Uppgift 3: Flex &amp; Grid</a></li>
-                            </ul>
-                        </li> 
-                        <li><a class="nav-link" href="#">Projekt 1</a></li>
-                        <li><a class="nav-link" href="#">Större Projekt 2</a></li>
-                        <li><a class="nav-link" href="#">Största Projekt 3</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link" href="help.html">Hjälp</a></li>
-                <li><a class="nav-link" href="about.html">Om</a></li>
-            </ul>
-            <button class="hamburger-button" id="hamburger-button" aria-label="hamburger-button" aria-expanded="false">
-                <svg fill="var(--clr-copy)" class="icon-hamburger" viewbox="0 0 100 100" width="32">
-                    <rect class="line top" width="90" height="5" x="10" y="30" rx="3"></rect>
-                    <!-- <rect class="line middle" width="90" height="10" x="10" y="45" rx="5"></rect> -->
-                    <rect class="line bottom" width="70" height="5" x="30" y="60" rx="3"></rect>
-                </svg>
-            </button>
-        </nav>
+        <ul class="primary-navigation" id="primary-navigation">
+            <li><a class="nav-link" href="index.html">Hem</a></li>
+            <!-- dropdown-meny skapas med dropdown-klass -->
+            <li class="dropdown">
+                <a class="nav-link" href="#">Portfolio</a>
+                <ul>
+                    <li><a class="nav-link" href="portfolio.html">Visa Allt</a></li>
+                    <!--undermeny-->
+                    <li class="dropdown">
+                        <a class="nav-link" href="#">Uppgifter</a>
+                        <ul>
+                            <li><a class="nav-link" href="#">Uppgift 1: Hello World</a></li>
+                            <li><a class="nav-link" href="#">Uppgift 2: Semantiska taggar</a></li>
+                            <li><a class="nav-link" href="#">Uppgift 3: Flex &amp; Grid</a></li>
+                        </ul>
+                    </li> 
+                    <li class="show-border"><a class="nav-link" href="#">Projekt 1</a></li>
+                    <li><a class="nav-link" href="#">Större Projekt 2</a></li>
+                    <li><a class="nav-link" href="#">Största Projekt 3</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-link" href="help.html">Hjälp</a></li>
+            <li><a class="nav-link" href="about.html">Om</a></li>
+        </ul>
+        <button class="hamburger-button" id="hamburger-button" aria-label="hamburger-button" aria-expanded="false">
+            <svg fill="var(--clr-copy)" class="icon-hamburger" viewbox="0 0 100 100" width="32">
+                <rect class="line top" width="90" height="5" x="10" y="30" rx="3"></rect>
+                <!-- <rect class="line middle" width="90" height="10" x="10" y="45" rx="5"></rect> -->
+                <rect class="line bottom" width="70" height="5" x="30" y="60" rx="3"></rect>
+            </svg>
+        </button>
+    </nav>
+    <header>
     </header>
     <main>
         <p class="italic">Detta exempel visar hur man kan bygga en dropdown-meny</p>
     </main>
+    <footer>
+    </footer>
 </body>
 </html>

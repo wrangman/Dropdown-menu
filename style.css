@@ -6,29 +6,33 @@ STYLE.CSS - global styling för webbsidan
 
 /* global styling */
 
-/* TODO: ändra färger för din meny */
+/* TODO: BÖRJA HÄR! ändra färger för din meny */
 :root {
   --clr-copy: #3a3a3a; /* normal text på sidan */
 
-  --clr-primary: hsl(0, 0%, 96%); /* bakgrundsfärg och primära färgen */
-  --clr-secondary: rebeccapurple; /* menyfärg */
-  --clr-accent: rgb(245, 7, 237); /* highlight CTA-färg  */
+  --clr-primary: hsl(0, 0%, 96%);   /* bakgrundsfärg och primära färgen */
+  --clr-secondary: rebeccapurple;   /* menyfärg */
+  --clr-cta: rgb(245, 7, 237);     /* CTA-färg */
+  --clr-highlight: rgb(237, 15, 163);  /* highlight i menyn */
 
   --clr-navbar: hsl(0, 0%, 99%);
   --clr-dropdown-background: white; /* dropdown-menyns bakgrund */
 
-  --clr-hover: hsl(270, 38%, 87%); /* hover färg */
+  --clr-hover: var(--clr-highlight);  /* markeringsfärg */
   --clr-active: var(--clr-secondary); /* färg man klickar */
+  
+  --clr-line: #ebebeb;              /* linje */
 
   --clr-navbar-shadow: 0 4px 12px hsl(0, 0%, 89%); /* för ljus UI använd en ljusgrå nyans */
-  --clr-menu-shadow: 0 4px 24px  hsl(0, 0%, 89%); /* för mörkt UI använd en ljusare nyans av bakgrunden här */
+  --clr-menu-shadow: 0 4px 24px  hsl(0, 0%, 89%); /* för mörkt UI använd en mörkare nyans av accent */
 
-  --menu-dropdown-size: 1em; /* hur stora ska dropdown-menyn vara? */
-  --menu-item-size: 1em; /* hur stort ska gränssnittet vara? */
-  --border-radius: 0.5rem; /* rundade kanter */
+  --menu-dropdown-size: 1.5em;  /* hur stora ska dropdown-menyn vara? */
+  --menu-item-size: 1em;        /* hur stort ska gränssnittet vara? */
+  --border-radius: 0.5rem;      /* rundade kanter */
 
   /*TODO: Ändra typsnitt här om du vill (kanske mest intressant när du använder denna dropdown i ditt projekt)*/
   --ff-primary: "Segoe UI", sans-serif;
+  --ff-secondary: "Segoe UI", sans-serif;
 }
 
 
@@ -41,7 +45,6 @@ STYLE.CSS - global styling för webbsidan
 }
 
 body {
-
   margin: 0;
   padding: 0;
 
@@ -49,19 +52,20 @@ body {
 
   min-height: 100vh;
 
-  font-family: var(--ff-primary);
+  font-family: var(--ff-secondary);
   font-size: var(--menu-item-size);
 }
 
-header {
+nav {
   position: sticky;
   top: 0;
 
   display: flex;
+  justify-content: start;
   align-items: center;
-  gap: calc(var(--menu-item-size) + 3em);
 
-  padding: calc(var(--menu-item-size) / 3) calc(var(--menu-item-size) * 2);
+  gap: calc(var(--menu-item-size) + 3em);
+  padding: calc(var(--menu-item-size) / 4) calc(var(--menu-item-size) * 2);
 
   background: var(--clr-navbar);
   box-shadow: var(--clr-navbar-shadow);
@@ -74,14 +78,9 @@ main {
   place-items: center;
 
   height: 80vh;
+
   padding-inline: 1rem;
   text-align: center;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .flex-layout {
@@ -93,14 +92,19 @@ nav {
 .primary-navigation {
   display: flex;
   gap: calc(0.5em + var(--menu-item-size));
-  list-style: none;
+  
   padding-inline: 0;
+  
+  list-style: none;
 }
 
 .logo-brand {
   font-size: calc(var(--menu-item-size) * 1.3);
   font-weight: bold;
-  color: var(--clr-accent);
+  
+  color: var(--clr-cta);
+
+  margin-block: 0;
 }
 
 
@@ -119,11 +123,16 @@ img {
 }
 
 .logo g path{
-  fill: var(--clr-accent); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-accent eller ändra här */
+  fill: var(--clr-cta); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-highlight eller ändra här */
 }
 
 
 /* text styling */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-primary);
+}
+
 p {
   color: var(--clr-copy);
 }
@@ -145,7 +154,7 @@ p {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--clr-accent);
+  color: var(--clr-highlight);
 }
 
 
@@ -165,44 +174,58 @@ li ul li a {
   display: block;
   
   /* här beräknas storleken på menyobjekten */
-  padding: calc(var(--menu-dropdown-size) / 2) var(--menu-dropdown-size);
+  padding: calc(var(--menu-dropdown-size) / 1.5) calc(var(--menu-dropdown-size) * 1.5) calc(var(--menu-dropdown-size) / 1.5) calc(var(--menu-dropdown-size) * 1.5);
+
 }
 
 .dropdown {
   position: relative;
 }
 
-/* pil bara för dropdown-menyer i menyer */
-/* TODO: Om du har högerjusterad meny kanske du vill ändra här. Ändra pil i content och ändra right till left: 0.3rem */
-li .dropdown::after {
-  content: ">";
-  position: absolute;
-  right: 0.3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--clr-secondary);
-}
 
 /* undermenyer */
 .dropdown ul {
   position: absolute;
   /* se till att alla undermenyer är stängda från början */
   display: none;
-
+  
   list-style: none;
   margin-inline: 0;
   padding-inline: 0;
-
-  /* TODO: vill du att menyn ska dyka upp högerjusterad? ta bort kommentarerna runt nedanstående egenskap: */
+  
+  /* TODO: Vill du att menyn ska dyka upp högerjusterad? ta bort kommentarerna runt nedanstående egenskap: */
   /* right: 0; */
-
+  
   white-space: nowrap;
+}
+
+/* pil bara för dropdown-menyer i menyer */
+/* FIXME: Om du har högerjusterad meny bör du ändra här. Ändra pil i content och ändra right till "left: 0.5rem" */
+.dropdown .dropdown::after {
+  content: ">";
+  
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+
+  color: var(--clr-secondary);
+
+  transform: translateY(-50%);
+}
+
+.dropdown .dropdown:hover::after {  
+  color: var(--clr-dropdown-background);
+}
+
+.dropdown .dropdown:active::after {  
+  background: var(--clr-secondary);
+  color: var(--clr-hover);
 }
 
 /* öppna dropdown-meny */
 .dropdown:hover > ul,
 .dropdown:focus-within > ul {
-  /* TODO: för horisontell meny: ändra display till flex :) */
+  /* TODO: För horisontell meny: ändra display till flex :) */
   display: block;
 
   background: var(--clr-dropdown-background);
@@ -216,7 +239,7 @@ li .dropdown::after {
 .dropdown ul .dropdown:focus-within > ul {
   display: block;
 
-  /* FIXME: ändra till right: 100% om du har högerjusterad meny*/
+  /* FIXME: Ändra till "right: 100%" om du har högerjusterad meny */
   left: 100%;
   top: 0;
 }
@@ -226,24 +249,43 @@ li .dropdown::after {
 .dropdown ul li a:focus {
   background: var(--clr-hover);
   border-radius: var(--border-radius);
-  color: var(--clr-secondary);
+  color: var(--clr-dropdown-background);
 }
 
 .dropdown ul li a:active {
-  background: var(--clr-active);
+  background: var(--clr-secondary);
   color: var(--clr-hover);
 }
 
-/* TODO: vill du ha en linje mellan varje dropdown objekt? 
-OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra till border-left här */
-.dropdown ul .dropdown:not(:first-child) {
-  border-top: 1px solid var(--clr-hover);
+/* TODO: Vill du ha en linje mellan varje dropdown objekt? 
+FIXME: OBS! om du kör horisontell meny bör du ändra till border-left här */
+.dropdown ul .dropdown:not(:first-child),
+.show-border {
+  border-top: 1px solid var(--clr-line);
 }
 
 
-/* responsivitet - mobile view */
+/***************************************
+RESPONSIVITET 
+****************************************/
 
-@media (width < 860px) {
+/* tablet view */
+
+@media (width > 480px) and (width < 860px) {
+
+  /* se till att menyn inte är utanför skärmen */
+  .dropdown ul .dropdown:hover > ul,
+  .dropdown ul .dropdown:focus-within > ul {
+      display: block;
+      left: 25%;            /* FIXME: Om du vill ha högerjusterad meny ändra till "right: 25%" */
+      top: 100%;
+  }
+}
+
+
+/* mobile view */
+
+@media (width < 480px) {
 /* öppna dropdown meny */
   .dropdown:hover > ul,
   .dropdown:focus-within > ul {
@@ -257,16 +299,17 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
   .dropdown ul .dropdown:hover > ul,
   .dropdown ul .dropdown:focus-within > ul {
       display: block;
+      
       left: 0;
       top: 100%;
   }
-}
 
-@media (width < 860px) {
+
   .hamburger-button {
     display: grid;
   }
 
+  /* ändrar länkar till block så de går att knacka på lättare */
   .nav-link {
     display: block;
     position: relative;
@@ -274,11 +317,11 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
     margin-block: 0;
   }
 
+  /* ändra navigation så den fungerar som en mobilmeny - den börjar osynlig för den ska inte visas innan man trycker på hamburgarknappen */
   .primary-navigation {
     position: fixed;
     inset: 0;
-    top: 4.0rem;
-    height: 100%;
+    top: 2.4rem;
 
     display: flex;
     justify-content: start;
@@ -294,13 +337,16 @@ OBS! om du kör "display: flex" där uppe på "dropdown ul:hover" bör du ändra
     transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
   }
 
+  /* när man trycker på hamburgarknappen öppnas själva menyn med transition - se menu.js */
   .primary-navigation.open {
     transform: translateX(0);
     opacity: 1;
   }
 
   nav {
-    justify-content: flex-end;
+    justify-content: space-between;
+
     width: 100%;
+    padding: calc(var(--menu-item-size) / 1.5) 1rem;
   }
 }
