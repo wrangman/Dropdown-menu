@@ -10,21 +10,21 @@ STYLE.CSS - global styling för webbsidan
 :root {
   --clr-copy: #3a3a3a;    /* brödtext på sidan */
 
-  --clr-primary: #f6f6f6;       /* bakgrundsfärg och primära färgen */
+  --clr-primary: #f6f6f6;               /* bakgrundsfärg och primära färgen */
   --clr-secondary: rebeccapurple;       /* navigationsfärg och bakgrundsfärg när man klickar  */
   --clr-cta: rgb(245, 7, 237);          /* CTA-färg */
   --clr-highlight: rgb(211, 21, 148);   /* highlight i menyn */
 
   --clr-navbar: #fafafa;
-  --clr-dropdown-background: white; /* dropdown-menyns bakgrund */
+  --clr-dropdown-background: white;     /* dropdown-menyns bakgrund */
 
-  --clr-hover: var(--clr-highlight);  /* markeringsfärg */
+  --clr-hover: var(--clr-highlight);            /* markeringsfärg */
   --clr-active: var(--clr-dropdown-background); /* färg på text när man klickar */
   
   --clr-line: #ebebeb;              /* linje */
 
-  --clr-navbar-shadow: 0 4px 12px #d6d6d6; /* för ljus UI använd en ljusgrå nyans */
-  --clr-menu-shadow: 0 4px 24px  #d2d2d2; /* för mörkt UI använd en mörkare nyans av accent */
+  --clr-navbar-shadow: 0 4px 12px #d6d6d6;  /* för ljus UI använd en ljusgrå nyans */
+  --clr-menu-shadow: 0 4px 24px  #d2d2d2;   /* för mörkt UI använd en mörkare nyans av cta */
 
   --menu-dropdown-size: 1.5em;  /* hur stora ska dropdown-menyn vara? */
   --menu-item-size: 1em;        /* hur stort ska gränssnittet vara? */
@@ -124,7 +124,7 @@ img {
 }
 
 .logo g path{
-  fill: var(--clr-cta); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-highlight eller ändra här */
+  fill: var(--clr-cta); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-cta eller ändra här */
 }
 
 
@@ -317,9 +317,8 @@ RESPONSIVITET
     top: 2.4rem;
 
     display: flex;
-    justify-content: start;
-
     flex-direction: column;
+    justify-content: start;
 
     padding: 2rem 2rem;
 
@@ -327,7 +326,8 @@ RESPONSIVITET
     opacity: 0;
 
     transform: translateX(100%);
-    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, 
+                opacity 250ms ease-in-out;
   }
 
   /* när man trycker på hamburgarknappen öppnas själva menyn med transition - se menu.js */
@@ -347,29 +347,31 @@ RESPONSIVITET
   /* Morph hamburger button to open/close states */
   .icon-hamburger .line {
     transition: rotate 250ms ease-in, 
-                transform 250ms 200ms ease-in;
+                transform 250ms 200ms ease-in,
+                opacity 250ms 200ms ease-in-out;
 
     transform-origin: center;
   }
 
   .icon-hamburger.morphToClose .line {
     transition: rotate 250ms 200ms ease-in-out, 
-                transform 250ms ease-in-out;
+                transform 250ms ease-in-out,
+                opacity 250ms ease-in-out;
 
     transform-origin: center;
   }
 
   .icon-hamburger.morphToClose .top {
-    transform: translateY(10px);
+    transform: translateY(20px);
     rotate: 45deg;
   }
-
-  /* .icon-hamburger.morphToClose .middle {
-    opacity: 0;
-  } */
-
-  .icon-hamburger.morphToClose .bottom {
-    transform: translateY(-10px);
+  
+  .icon-hamburger.morphToClose .middle {
     rotate: -45deg;
+  }
+  
+  .icon-hamburger.morphToClose .bottom {
+    transform: translateY(-20px);
+    opacity: 0;
   }
 }
