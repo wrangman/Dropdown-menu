@@ -276,7 +276,7 @@ RESPONSIVITET
 
 /* mobile view */
 
-@media (width < 480px) {
+@media (max-width: 480px) {
    /* öppna dropdown meny */
    .dropdown:hover > ul,
    .dropdown:focus-within > ul {
