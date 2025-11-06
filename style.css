@@ -219,7 +219,7 @@ li ul li a {
 }
 
 .dropdown .dropdown:hover::after {  
-   color: var(--clr-active);
+   color: var(--clr-secondary);
 }
 
 .dropdown .dropdown:active::after {  
