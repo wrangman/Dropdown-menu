@@ -8,31 +8,31 @@ STYLE.CSS - global styling för webbsidan
 
 /* TODO: BÖRJA HÄR! ändra färger för din meny */
 :root {
-  --clr-copy: #3a3a3a;    /* brödtext på sidan */
+   --clr-copy: #3a3a3a;    /* brödtext på sidan */
 
-  --clr-primary: #f6f6f6;               /* bakgrundsfärg och primära färgen */
-  --clr-secondary: rebeccapurple;       /* navigationsfärg och bakgrundsfärg när man klickar  */
-  --clr-cta: rgb(245, 7, 237);          /* CTA-färg */
-  --clr-highlight: rgb(211, 21, 148);   /* highlight i menyn */
+   --clr-primary: #f6f6f6;               /* bakgrundsfärg och primära färgen */
+   --clr-secondary: rebeccapurple;       /* navigationsfärg och bakgrundsfärg när man klickar  */
+   --clr-cta: rgb(245, 7, 237);          /* CTA-färg */
+   --clr-highlight: rgb(211, 21, 148);   /* highlight i menyn */
 
-  --clr-navbar: #fafafa;
-  --clr-dropdown-background: white;     /* dropdown-menyns bakgrund */
+   --clr-navbar: #fafafa;
+   --clr-dropdown-background: white;     /* dropdown-menyns bakgrund */
 
-  --clr-hover: var(--clr-highlight);            /* markeringsfärg */
-  --clr-active: var(--clr-dropdown-background); /* färg på text när man klickar */
-  
-  --clr-line: #ebebeb;              /* linje */
+   --clr-hover: var(--clr-highlight);            /* markeringsfärg */
+   --clr-active: var(--clr-dropdown-background); /* färg på text när man klickar */
+   
+   --clr-line: #ebebeb;              /* linje */
 
-  --clr-navbar-shadow: 0 4px 12px #d6d6d6;  /* för ljus UI använd en ljusgrå nyans */
-  --clr-menu-shadow: 0 4px 24px  #d2d2d2;   /* för mörkt UI använd en mörkare nyans av cta */
+   --clr-navbar-shadow: 0 4px 12px #d6d6d6;  /* för ljus UI använd en ljusgrå nyans */
+   --clr-menu-shadow: 0 4px 24px  #d2d2d2;   /* för mörkt UI använd en mörkare nyans av cta */
 
-  --menu-dropdown-size: 1.5em;  /* hur stora ska dropdown-menyn vara? */
-  --menu-item-size: 1em;        /* hur stort ska gränssnittet vara? */
-  --border-radius: 0.5rem;      /* rundade kanter */
+   --menu-dropdown-size: 1.5em;  /* hur stora ska dropdown-menyn vara? */
+   --menu-item-size: 1em;        /* hur stort ska gränssnittet vara? */
+   --border-radius: 0.5rem;      /* rundade kanter */
 
-  /*TODO: Ändra typsnitt här om du vill (kanske mest intressant när du använder denna dropdown i ditt projekt)*/
-  --ff-primary: "Segoe UI", sans-serif;
-  --ff-secondary: "Segoe UI", sans-serif;
+   /*TODO: Ändra typsnitt här om du vill (kanske mest intressant när du använder denna dropdown i ditt projekt)*/
+   --ff-primary: "Segoe UI", sans-serif;
+   --ff-secondary: "Segoe UI", sans-serif;
 }
 
 
@@ -41,109 +41,109 @@ STYLE.CSS - global styling för webbsidan
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+   margin: 0;
+   padding: 0;
 
-  background-color: var(--clr-primary);
+   background-color: var(--clr-primary);
 
-  min-height: 100vh;
+   min-height: 100vh;
 
-  font-family: var(--ff-secondary);
-  font-size: var(--menu-item-size);
+   font-family: var(--ff-secondary);
+   font-size: var(--menu-item-size);
 }
 
 nav {
-  position: sticky;
-  top: 0;
+   position: sticky;
+   top: 0;
 
-  display: flex;
-  justify-content: start;
-  align-items: center;
+   display: flex;
+   justify-content: start;
+   align-items: center;
 
-  gap: calc(var(--menu-item-size) + 3em);
-  padding: calc(var(--menu-item-size) / 4) calc(var(--menu-item-size) * 2);
+   gap: calc(var(--menu-item-size) + 3em);
+   padding: calc(var(--menu-item-size) / 4) calc(var(--menu-item-size) * 2);
 
-  background: var(--clr-navbar);
-  box-shadow: var(--clr-navbar-shadow);
+   background: var(--clr-navbar);
+   box-shadow: var(--clr-navbar-shadow);
 
-  z-index: 1;
+   z-index: 1;
 }
 
 main {
-  display: grid;
-  place-content: center;
+   display: grid;
+   place-content: center;
 
-  height: 80vh;
+   height: 80vh;
 
-  padding-inline: 1rem;
-  text-align: center;
+   padding-inline: 1rem;
+   text-align: center;
 }
 
 .primary-navigation {
-  display: flex;
-  gap: calc(0.5em + var(--menu-item-size));
-  
-  padding-inline: 0;
-  
-  list-style: none;
+   display: flex;
+   gap: calc(0.5em + var(--menu-item-size));
+   
+   padding-inline: 0;
+   
+   list-style: none;
 }
 
 .logo-brand {
-  font-size: calc(var(--menu-item-size) * 1.3);
-  font-weight: bold;
-  
-  color: var(--clr-cta);
-  
-  margin-block: 0;
+   font-size: calc(var(--menu-item-size) * 1.3);
+   font-weight: bold;
+   
+   color: var(--clr-cta);
+   
+   margin-block: 0;
 }
 
 .flex-layout {
-  display: flex;
-  align-items: center;
-  gap: var(--menu-item-size);
+   display: flex;
+   align-items: center;
+   gap: var(--menu-item-size);
 }
 
 
 /* image styling */
 
 img {
-  display: block;
+   display: block;
 
-  max-width: 100%;
-  object-fit: cover;
-  
-  font-style: italic;
+   max-width: 100%;
+   object-fit: cover;
+   
+   font-style: italic;
 }
 
 .logo {
-  width: calc(var(--menu-item-size) * 1.3);
+   width: calc(var(--menu-item-size) * 1.3);
 }
 
 .logo g path{
-  fill: var(--clr-cta); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-cta eller ändra här */
+   fill: var(--clr-cta); /* om du vill ändra färgen på logotypen gå högst upp och ändra --clr-cta eller ändra här */
 }
 
 
 /* text styling */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--ff-primary);
+   font-family: var(--ff-primary);
 }
 
 p {
-  color: var(--clr-copy);
+   color: var(--clr-copy);
 }
 
 .italic {
-  font-style: italic;
+   font-style: italic;
 }
 
 .bold {
-  font-weight: 700;
+   font-weight: 700;
 }
 
 
@@ -151,27 +151,27 @@ p {
 
 .nav-link:link,
 .nav-link:visited {
-  text-decoration: none;
-  color: var(--clr-secondary);
+   text-decoration: none;
+   color: var(--clr-secondary);
 
-  font-weight: 500;
-  font-size: calc(var(--menu-item-size) * 1.1);
+   font-weight: 500;
+   font-size: calc(var(--menu-item-size) * 1.1);
 
-  white-space: nowrap;
+   white-space: nowrap;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--clr-highlight);
+   color: var(--clr-highlight);
 }
 
 
 /* buttons */
 
 .hamburger-button {
-  all: unset;
-  display: none;
-  place-items: center;
+   all: unset;
+   display: none;
+   place-items: center;
 }
 
 
@@ -179,10 +179,10 @@ p {
 
 /* länkarna i dropdown-menyerna */
 li ul li a {
-  display: block;
-  
-  /* här beräknas storleken på menyobjekten */
-  padding: calc(var(--menu-dropdown-size) / 1.5) calc(var(--menu-dropdown-size) * 1.5) calc(var(--menu-dropdown-size) / 1.5) calc(var(--menu-dropdown-size) * 1.5);
+   display: block;
+   
+   /* här beräknas storleken på menyobjekten */
+   padding: calc(var(--menu-dropdown-size) / 1.5) calc(var(--menu-dropdown-size) * 1.5) calc(var(--menu-dropdown-size) / 1.5) calc(var(--menu-dropdown-size) * 1.5);
 }
 
 .dropdown {
@@ -191,81 +191,81 @@ li ul li a {
 
 /* undermenyer */
 .dropdown ul {
-  position: absolute;
-  
-  /* se till att alla undermenyer är stängda från början */
-  display: none;
-  
-  /* TODO: Vill du att menyn ska dyka upp högerjusterad? ta bort kommentarerna runt nedanstående egenskap: */
-  /* right: 0; */
+   position: absolute;
+   
+   /* se till att alla undermenyer är stängda från början */
+   display: none;
+   
+   /* TODO: Vill du att menyn ska dyka upp högerjusterad? ta bort kommentarerna runt nedanstående egenskap: */
+   /* right: 0; */
 
-  padding-inline: 0;
+   padding-inline: 0;
 
-  list-style: none;
+   list-style: none;
 }
 
 /* pil bara för dropdown-menyer i menyer */
 /* FIXME: Om du har högerjusterad meny bör du ändra här. Ändra pil i content och ändra right till "left: 0.5rem" */
 .dropdown .dropdown::after {
-  content: ">";
-  
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
+   content: ">";
+   
+   position: absolute;
+   right: 0.5rem;
+   top: 50%;
 
-  color: var(--clr-secondary);
+   color: var(--clr-secondary);
 
-  transform: translateY(-50%);
+   transform: translateY(-50%);
 }
 
 .dropdown .dropdown:hover::after {  
-  color: var(--clr-active);
+   color: var(--clr-active);
 }
 
 .dropdown .dropdown:active::after {  
-  color: var(--clr-active);
+   color: var(--clr-active);
 }
 
 /* öppna dropdown-meny */
 .dropdown:hover > ul,
 .dropdown:focus-within > ul {
-  /* TODO: För horisontell meny: ändra display till flex :) */
-  display: block;
+   /* TODO: För horisontell meny: ändra display till flex :) */
+   display: block;
 
-  background: var(--clr-dropdown-background);
-  box-shadow: var(--clr-menu-shadow);
+   background: var(--clr-dropdown-background);
+   box-shadow: var(--clr-menu-shadow);
 
-  border-radius: var(--border-radius);
-  z-index: 99;
+   border-radius: var(--border-radius);
+   z-index: 99;
 }
 
 .dropdown ul .dropdown:hover > ul,
 .dropdown ul .dropdown:focus-within > ul {
-  display: block;
+   display: block;
 
-  /* FIXME: Ändra till "right: 100%" om du har högerjusterad meny */
-  left: 100%;
-  top: 0;
+   /* FIXME: Ändra till "right: 100%" om du har högerjusterad meny */
+   left: 100%;
+   top: 0;
 }
 
 /* markering */
 .dropdown ul li a:hover,
 .dropdown ul li a:focus {
-  background: var(--clr-hover);
-  border-radius: var(--border-radius);
-  color: var(--clr-dropdown-background);
+   background: var(--clr-hover);
+   border-radius: var(--border-radius);
+   color: var(--clr-dropdown-background);
 }
 
 .dropdown ul li a:active {
-  background: var(--clr-secondary);
-  color: var(--clr-active);
+   background: var(--clr-secondary);
+   color: var(--clr-active);
 }
 
 /* TODO: Vill du ha en linje mellan varje dropdown objekt? 
 FIXME: OBS! om du kör horisontell meny bör du ändra till border-left här */
 .dropdown ul .dropdown:not(:first-child),
 .show-border {
-  border-top: 1px solid var(--clr-line);
+   border-top: 1px solid var(--clr-line);
 }
 
 
@@ -277,101 +277,99 @@ RESPONSIVITET
 /* mobile view */
 
 @media (width < 480px) {
+   /* öppna dropdown meny */
+   .dropdown:hover > ul,
+   .dropdown:focus-within > ul {
+         display: block;
+
+         border-radius: 0;
+         
+         width: 100%;
+   }
+
+   .dropdown ul .dropdown:hover > ul,
+   .dropdown ul .dropdown:focus-within > ul {
+         display: block;
+         
+         left: 0;
+         top: 100%;
+   }
 
 
-/* öppna dropdown meny */
-  .dropdown:hover > ul,
-  .dropdown:focus-within > ul {
+   .hamburger-button {
+      display: grid;
+   }
+
+   /* ändrar länkar till block så de går att knacka på lättare */
+   .nav-link {
       display: block;
+      position: relative;
+      padding-block: 1rem;
+      margin-block: 0;
+   }
 
-      border-radius: 0;
-      
+   /* ändra navigation så den fungerar som en mobilmeny - den börjar osynlig för den ska inte visas innan man trycker på hamburgarknappen */
+   .primary-navigation {
+      position: fixed;
+      inset: 0;
+      top: 2.4rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+
+      padding: 2rem 2rem;
+
+      background: var(--clr-navbar);
+      opacity: 0;
+
+      transform: translateX(100%);
+      transition: transform 250ms ease-in-out, 
+                  opacity 250ms ease-in-out;
+   }
+
+   /* när man trycker på hamburgarknappen öppnas själva menyn med transition - se menu.js */
+   .primary-navigation.open {
+      transform: translateX(0);
+      opacity: 1;
+   }
+
+   nav {
+      justify-content: space-between;
+
       width: 100%;
-  }
-
-  .dropdown ul .dropdown:hover > ul,
-  .dropdown ul .dropdown:focus-within > ul {
-      display: block;
-      
-      left: 0;
-      top: 100%;
-  }
+      padding: calc(var(--menu-item-size) / 1.5) 1rem;
+   }
 
 
-  .hamburger-button {
-    display: grid;
-  }
+   /* Morph hamburger button to open/close states */
+   .icon-hamburger .line {
+      transition: rotate 250ms ease-in, 
+                  transform 250ms 200ms ease-in,
+                  opacity 250ms 200ms ease-in-out;
 
-  /* ändrar länkar till block så de går att knacka på lättare */
-  .nav-link {
-    display: block;
-    position: relative;
-    padding-block: 1rem;
-    margin-block: 0;
-  }
+      transform-origin: center;
+   }
 
-  /* ändra navigation så den fungerar som en mobilmeny - den börjar osynlig för den ska inte visas innan man trycker på hamburgarknappen */
-  .primary-navigation {
-    position: fixed;
-    inset: 0;
-    top: 2.4rem;
+   .icon-hamburger.morphToClose .line {
+      transition: rotate 250ms 200ms ease-in-out, 
+                  transform 250ms ease-in-out,
+                  opacity 250ms ease-in-out;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+      transform-origin: center;
+   }
 
-    padding: 2rem 2rem;
-
-    background: var(--clr-navbar);
-    opacity: 0;
-
-    transform: translateX(100%);
-    transition: transform 250ms ease-in-out, 
-                opacity 250ms ease-in-out;
-  }
-
-  /* när man trycker på hamburgarknappen öppnas själva menyn med transition - se menu.js */
-  .primary-navigation.open {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  nav {
-    justify-content: space-between;
-
-    width: 100%;
-    padding: calc(var(--menu-item-size) / 1.5) 1rem;
-  }
-
-
-  /* Morph hamburger button to open/close states */
-  .icon-hamburger .line {
-    transition: rotate 250ms ease-in, 
-                transform 250ms 200ms ease-in,
-                opacity 250ms 200ms ease-in-out;
-
-    transform-origin: center;
-  }
-
-  .icon-hamburger.morphToClose .line {
-    transition: rotate 250ms 200ms ease-in-out, 
-                transform 250ms ease-in-out,
-                opacity 250ms ease-in-out;
-
-    transform-origin: center;
-  }
-
-  .icon-hamburger.morphToClose .top {
-    transform: translateY(20px);
-    rotate: 45deg;
-  }
-  
-  .icon-hamburger.morphToClose .middle {
-    rotate: -45deg;
-  }
-  
-  .icon-hamburger.morphToClose .bottom {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
+   .icon-hamburger.morphToClose .top {
+      transform: translateY(20px);
+      rotate: 45deg;
+   }
+   
+   .icon-hamburger.morphToClose .middle {
+      rotate: -45deg;
+   }
+   
+   .icon-hamburger.morphToClose .bottom {
+      transform: translateY(-20px);
+      opacity: 0;
+   }
 }
