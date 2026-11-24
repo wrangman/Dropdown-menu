@@ -56,21 +56,26 @@ body {
    font-size: var(--menu-item-size);
 }
 
-nav {
+header {
    position: sticky;
    top: 0;
 
    display: flex;
+   
    justify-content: start;
-   align-items: center;
-
    gap: calc(var(--menu-item-size) + 3em);
+   
    padding: calc(var(--menu-item-size) / 4) calc(var(--menu-item-size) * 2);
 
    background: var(--clr-navbar);
    box-shadow: var(--clr-navbar-shadow);
 
    z-index: 1;
+}
+
+nav {
+   display: flex;
+   align-items: center;
 }
 
 main {
