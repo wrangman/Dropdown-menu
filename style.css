@@ -10,15 +10,15 @@ STYLE.CSS - global styling för webbsidan
 :root {
    --clr-copy: #3a3a3a;    /* brödtext på sidan */
 
-   --clr-primary: #f6f6f6;               /* bakgrundsfärg och primära färgen */
-   --clr-secondary: rebeccapurple;       /* navigationsfärg och bakgrundsfärg när man klickar  */
-   --clr-cta: rgb(245, 7, 237);          /* CTA-färg */
-   --clr-highlight: rgb(211, 21, 148);   /* highlight i menyn */
+   --clr-primary: #f6f6f6;                /* bakgrundsfärg och primära färgen */
+   --clr-secondary: rebeccapurple;        /* navigationsfärg och bakgrundsfärg när man klickar  */
+   --clr-cta: rgb(245, 7, 237);           /* CTA-färg */
+   --clr-accent: rgb(211, 21, 148);       /* accent i menyn */
 
    --clr-navbar: #fafafa;
    --clr-dropdown-background: white;     /* dropdown-menyns bakgrund */
 
-   --clr-hover: var(--clr-highlight);            /* markeringsfärg */
+   --clr-hover: var(--clr-accent);            /* markeringsfärg */
    --clr-active: var(--clr-dropdown-background); /* färg på text när man klickar */
    
    --clr-line: #ebebeb;              /* linje */
@@ -162,7 +162,7 @@ p {
 
 .nav-link:hover,
 .nav-link:focus {
-   color: var(--clr-highlight);
+   color: var(--clr-accent);
 }
 
 
